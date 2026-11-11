@@ -1,450 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BASEBALL MATES | 보는 야구에서, 함께 뛰는 야구로</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-  <input type="checkbox" id="menu-toggle">
-  <input type="checkbox" id="search-toggle">
-
-  <header class="header">
-    <div class="header-top">
-
-      <a href="#home" class="logo">
-        <span class="logo-mark">BM</span>
-        <span class="logo-text">
-          <strong>BASEBALL MATES</strong>
-          <small>PLAY TOGETHER</small>
-        </span>
-      </a>
-
-      <div class="header-actions">
-        <label for="search-toggle" class="search-button">⌕ 검색</label>
-        <a href="#recruit" class="header-join">참여하기 ↗</a>
-
-        <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-    </div>
-
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="#about">팀 소개</a>
-        <a href="#activities">팀 활동</a>
-        <a href="#beginner">초보자 환영</a>
-        <a href="#gallery">활동 갤러리</a>
-        <a href="#recruit">선수 모집</a>
-        <a href="#contact">문의하기</a>
-      </div>
-    </nav>
-
-    <div class="search-panel">
-      <div class="search-panel-inner">
-        <p class="eyebrow">FIND WHAT YOU NEED</p>
-        <h2>무엇을 찾고 있나요?</h2>
-
-        <form action="#about" method="get">
-          <input type="search" placeholder="팀 소개, 활동 안내, 모집 정보...">
-          <button type="submit">검색하기 ↗</button>
-        </form>
-
-        <label for="search-toggle" class="search-close">닫기 ✕</label>
-      </div>
-    </div>
-
-    <div class="mobile-nav">
-      <a href="#about">팀 소개 <span>01</span></a>
-      <a href="#activities">팀 활동 <span>02</span></a>
-      <a href="#beginner">초보자 환영 <span>03</span></a>
-      <a href="#gallery">활동 갤러리 <span>04</span></a>
-      <a href="#recruit">선수 모집 <span>05</span></a>
-      <a href="#contact">문의하기 <span>06</span></a>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- 메인 비주얼 -->
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <p class="hero-kicker">DAEGU · GYEONGBUK BASEBALL COMMUNITY</p>
-
-        <h1>
-          보는 야구에서,<br>
-          <span>함께 뛰는 야구로.</span>
-        </h1>
-
-        <p class="hero-description">
-          야구를 좋아한다는 공통점 하나로 모여<br>
-          함께 뛰고, 함께 즐기는 우리들의 야구 이야기.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#about" class="button button-light">커뮤니티 알아보기 ↗</a>
-          <a href="#recruit" class="button button-outline">선수 모집 안내</a>
-        </div>
-      </div>
-
-      <div class="hero-bottom">
-        <span>BASEBALL MATES</span>
-        <span>PLAY TOGETHER · GROW TOGETHER</span>
-      </div>
-    </section>
-
-    <!-- 소개 문구 -->
-    <section class="intro-section">
-      <div class="intro-inner">
-        <p class="eyebrow">WELCOME TO BASEBALL MATES</p>
-
-        <h2>
-          혼자 보는 야구도 좋지만,<br>
-          <span>함께하는 야구는 더 특별합니다.</span>
-        </h2>
-
-        <p>
-          야구를 좋아하지만 직접 해볼 기회가 없었던 사람부터<br>
-          꾸준히 야구를 즐겨온 사람까지.<br>
-          BASEBALL MATES에서 함께 새로운 경험을 만들어 갑니다.
-        </p>
-      </div>
-    </section>
-
-  
-<!-- BASEBALL MATES / ABOUT & ACTIVITIES -->
-<section class="section mates-editorial-section" id="about">
-
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">ABOUT BASEBALL MATES</p>
-      <h2>야구를 좋아하는 마음으로 <span>하나가 되다.</span></h2>
-    </div>
-
-    <p class="section-heading-side">
-      야구를 좋아하는 사람들이 모여<br>
-      함께 뛰고 성장하는 사회인 야구 커뮤니티
-    </p>
-  </div>
-
-  <div class="mates-mosaic" id="activities">
-
-    <!-- 상단 이미지 1 -->
-    <article class="mosaic-card mosaic-top">
-      <img
-        src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=1000&q=85"
-        alt="야구 연습 활동"
-        loading="lazy"
-      >
-      <div class="mosaic-caption">
-        <span>01 / PRACTICE</span>
-        <h3>함께 배우는 야구</h3>
-        <p>기초부터 하나씩 익혀가는 시간</p>
-      </div>
-    </article>
-
-    <!-- 상단 이미지 2 -->
-    <article class="mosaic-card mosaic-top">
-      <img
-        src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=1000&q=85"
-        alt="함께하는 야구팀"
-        loading="lazy"
-      >
-      <div class="mosaic-caption">
-        <span>02 / TEAM PLAY</span>
-        <h3>하나 되는 팀워크</h3>
-        <p>서로 호흡을 맞추며 성장합니다</p>
-      </div>
-    </article>
-
-    <!-- 상단 이미지 3 -->
-    <article class="mosaic-card mosaic-top">
-      <img
-        src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=1000&q=85"
-        alt="야구 경기장"
-        loading="lazy"
-      >
-      <div class="mosaic-caption">
-        <span>03 / GAME DAY</span>
-        <h3>함께하는 경기</h3>
-        <p>경기 속에서 만드는 특별한 추억</p>
-      </div>
-    </article>
-
-    <!-- 하단 왼쪽 이미지 -->
-    <div class="mosaic-feature-image">
-      <img
-        src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=1400&q=85"
-        alt="야구장에서 함께하는 BASEBALL MATES"
-        loading="lazy"
-      >
-
-      <span class="mosaic-image-label">
-        TOGETHER ON THE FIELD
-      </span>
-    </div>
-
-    <!-- 하단 오른쪽 소개 영역 -->
-    <div class="mosaic-story">
-      <span class="number">BASEBALL MATES / OUR STORY</span>
-
-      <h3>
-        보는 야구에서,<br>
-        <span>함께 뛰는 야구로.</span>
-      </h3>
-
-      <p>
-        BASEBALL MATES는 야구를 좋아하는 사람들이
-        함께 모여 직접 경기를 즐기고 소통하기 위해
-        만들어진 사회인 야구 커뮤니티입니다.
-      </p>
-
-      <p>
-        실력이나 경험보다 중요한 것은 야구를 즐기려는 마음입니다.
-        서로를 존중하고 함께 성장하며 오래도록 기억에 남을
-        야구 경험을 만들어 갑니다.
-      </p>
-
-      <a href="#recruit" class="mosaic-button">
-        함께할 멤버 알아보기 <span>↗</span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- 초보자 환영 -->
-    <section class="beginner-section" id="beginner">
-      <div class="beginner-image">
-        <img
-          src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=1600&q=85"
-          alt="야구장에서 타격을 준비하는 선수"
-          loading="lazy"
-        >
-      </div>
-
-      <div class="beginner-overlay"></div>
-
-      <div class="beginner-content">
-        <p class="eyebrow">EVERYONE IS WELCOME</p>
-
-        <h2>
-          야구가 처음이어도<br>
-          <span>괜찮습니다.</span>
-        </h2>
-
-        <p>
-          야구를 좋아하지만 직접 해본 적은 없나요?<br>
-          경험이 없어도 괜찮습니다.<br>
-          함께 배우고 즐기면서 천천히 시작해 보세요.
-        </p>
-
-        <a href="#recruit" class="button button-light">참여 방법 알아보기 ↗</a>
-      </div>
-    </section>
-
-    <!-- 활동 갤러리 -->
-    <section class="section gallery-section" id="gallery">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">OUR MOMENTS</p>
-          <h2>함께 만들어 가는 <span>우리의 순간</span></h2>
-        </div>
-
-        <p class="section-heading-side">
-          연습부터 경기까지,<br>
-          BASEBALL MATES의 활동 기록
-        </p>
-      </div>
-
-      <div class="photo-marquee">
-        <div class="marquee-track">
-
-          <div class="marquee-group">
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=900&q=80"
-                alt="야구팀 단체 사진"
-                loading="lazy"
-              >
-              <span>TEAM TOGETHER</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=900&q=80"
-                alt="투수 연습 장면"
-                loading="lazy"
-              >
-              <span>PRACTICE DAY</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=900&q=80"
-                alt="타격 연습 장면"
-                loading="lazy"
-              >
-              <span>ON THE FIELD</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=900&q=80"
-                alt="야구 경기장"
-                loading="lazy"
-              >
-              <span>GAME DAY</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=900&q=80"
-                alt="야구팀 활동 모습"
-                loading="lazy"
-              >
-              <span>TEAM SPIRIT</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1560362740-83ba9be1921c?auto=format&fit=crop&w=900&q=80"
-                alt="야구 경기 모습"
-                loading="lazy"
-              >
-              <span>PLAY TOGETHER</span>
-            </div>
-          </div>
-
-          <!-- 무한 반복용 복제 영역 -->
-          <div class="marquee-group" aria-hidden="true">
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>TEAM TOGETHER</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>PRACTICE DAY</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>ON THE FIELD</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>GAME DAY</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>TEAM SPIRIT</span>
-            </div>
-
-            <div class="marquee-card">
-              <img
-                src="https://images.unsplash.com/photo-1560362740-83ba9be1921c?auto=format&fit=crop&w=900&q=80"
-                alt=""
-              >
-              <span>PLAY TOGETHER</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <p class="gallery-note">
-        ※ 현재 사진은 외부 이미지 예시이며, 실제 팀 활동 사진으로 교체할 수 있습니다.
-      </p>
-    </section>
-
-    <!-- 모집 -->
-    <section class="recruit-section" id="recruit">
-      <div class="recruit-inner">
-
-        <div class="recruit-copy">
-          <p class="eyebrow">JOIN BASEBALL MATES</p>
-
-          <h2>
-            이제 관중석에서 나와<br>
-            <span>그라운드 위 주인공이 되어보세요.</span>
-          </h2>
-
-          <p>
-            야구를 좋아하는 성인이라면 누구나 환영합니다.<br>
-            경험이 없어도 함께 시작할 수 있습니다.
-          </p>
-        </div>
-
-        <div class="recruit-action">
-          <span>YOUR BASEBALL STORY STARTS HERE</span>
-          <a href="#contact" class="button button-dark">모집 안내 및 문의하기 ↗</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 문의 -->
-    <section class="contact-section" id="contact">
-      <div class="contact-inner">
-
-        <div>
-          <p class="eyebrow">CONTACT US</p>
-          <h2>우리와 함께하고 싶다면?</h2>
-
-          <p>
-            BASEBALL MATES에 대한 궁금한 점이나<br>
-            참여 관련 문의를 남겨주세요.
-          </p>
-        </div>
-
-        <a href="mailto:your-email@example.com" class="contact-link">
-          문의하기 <span>↗</span>
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-        <a href="#home" class="logo footer-logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BASEBALL MATES | 보는 야구에서, 함께 뛰는 야구로</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <input type="checkbox" id="menu-toggle" />
+    <input type="checkbox" id="search-toggle" />
+
+    <header class="header">
+      <div class="header-top">
+        <a href="#home" class="logo">
           <span class="logo-mark">BM</span>
           <span class="logo-text">
             <strong>BASEBALL MATES</strong>
@@ -452,32 +29,625 @@
           </span>
         </a>
 
-        <p>보는 야구에서, 함께 뛰는 야구로.</p>
+        <div class="header-actions">
+          <label for="search-toggle" class="search-button">⌕ 검색</label>
+          <a href="#recruit" class="header-join">참여하기 ↗</a>
+
+          <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <a href="#about">팀 소개</a>
-        <a href="#activities">팀 활동</a>
-        <a href="#recruit">선수 모집</a>
-        <a href="#contact">문의하기</a>
+      <nav class="nav">
+        <div class="nav-inner">
+          <a href="#about">팀 소개</a>
+          <a href="#activities">팀 활동</a>
+          <a href="#beginner">초보자 환영</a>
+          <a href="#gallery">활동 갤러리</a>
+          <a href="#recruit">선수 모집</a>
+          <a href="#contact">문의하기</a>
+        </div>
+      </nav>
+
+      <div class="search-panel">
+        <div class="search-panel-inner">
+          <p class="eyebrow">FIND WHAT YOU NEED</p>
+          <h2>무엇을 찾고 있나요?</h2>
+
+          <form action="#about" method="get">
+            <input
+              type="search"
+              placeholder="팀 소개, 활동 안내, 모집 정보..."
+            />
+            <button type="submit">검색하기 ↗</button>
+          </form>
+
+          <label for="search-toggle" class="search-close">닫기 ✕</label>
+        </div>
       </div>
 
-    </div>
+      <div class="mobile-nav">
+        <a href="#about">팀 소개 <span>01</span></a>
+        <a href="#activities">팀 활동 <span>02</span></a>
+        <a href="#beginner">초보자 환영 <span>03</span></a>
+        <a href="#gallery">활동 갤러리 <span>04</span></a>
+        <a href="#recruit">선수 모집 <span>05</span></a>
+        <a href="#contact">문의하기 <span>06</span></a>
+      </div>
+    </header>
 
-    <div class="footer-bottom">
-      <span>© BASEBALL MATES. ALL RIGHTS RESERVED.</span>
-      <span>DAEGU · GYEONGBUK</span>
-    </div>
-  </footer>
-</footer>
+    <main>
+      <!-- 메인 비주얼 -->
+      <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
 
-<!-- 최상단 이동 버튼 -->
-<a href="#" class="top-button" aria-label="페이지 최상단으로 이동">
-  <span>↑</span>
-  <small>TOP</small>
-</a>
+        <div class="hero-content">
+          <p class="hero-kicker">DAEGU · GYEONGBUK BASEBALL COMMUNITY</p>
 
-</body>
-</html>
-</body>
+          <h1>
+            보는 야구에서,<br />
+            <span>함께 뛰는 야구로.</span>
+          </h1>
+
+          <p class="hero-description">
+            야구를 좋아한다는 공통점 하나로 모여<br />
+            함께 뛰고, 함께 즐기는 우리들의 야구 이야기.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#about" class="button button-light">커뮤니티 알아보기 ↗</a>
+            <a href="#recruit" class="button button-outline">선수 모집 안내</a>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <span>BASEBALL MATES</span>
+          <span>PLAY TOGETHER · GROW TOGETHER</span>
+        </div>
+      </section>
+
+      <!-- 소개 문구 -->
+      <section class="intro-section">
+        <div class="intro-inner">
+          <p class="eyebrow">WELCOME TO BASEBALL MATES</p>
+
+          <h2>
+            혼자 보는 야구도 좋지만,<br />
+            <span>함께하는 야구는 더 특별합니다.</span>
+          </h2>
+
+          <p>
+            야구를 좋아하지만 직접 해볼 기회가 없었던 사람부터<br />
+            꾸준히 야구를 즐겨온 사람까지.<br />
+            BASEBALL MATES에서 함께 새로운 경험을 만들어 갑니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- BASEBALL MATES / ABOUT & ACTIVITIES -->
+      <section class="section mates-editorial-section" id="about">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ABOUT BASEBALL MATES</p>
+            <h2>야구를 좋아하는 마음으로 <span>하나가 되다.</span></h2>
+          </div>
+
+          <p class="section-heading-side">
+            야구를 좋아하는 사람들이 모여<br />
+            함께 뛰고 성장하는 사회인 야구 커뮤니티
+          </p>
+        </div>
+
+        <div class="mates-mosaic" id="activities">
+          <!-- 상단 이미지 1 -->
+          <article class="mosaic-card mosaic-top">
+            <img
+              src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=1000&q=85"
+              alt="야구 연습 활동"
+              loading="lazy"
+            />
+            <div class="mosaic-caption">
+              <span>01 / PRACTICE</span>
+              <h3>함께 배우는 야구</h3>
+              <p>기초부터 하나씩 익혀가는 시간</p>
+            </div>
+          </article>
+
+          <!-- 상단 이미지 2 -->
+          <article class="mosaic-card mosaic-top">
+            <img
+              src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=1000&q=85"
+              alt="함께하는 야구팀"
+              loading="lazy"
+            />
+            <div class="mosaic-caption">
+              <span>02 / TEAM PLAY</span>
+              <h3>하나 되는 팀워크</h3>
+              <p>서로 호흡을 맞추며 성장합니다</p>
+            </div>
+          </article>
+
+          <!-- 상단 이미지 3 -->
+          <article class="mosaic-card mosaic-top">
+            <img
+              src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=1000&q=85"
+              alt="야구 경기장"
+              loading="lazy"
+            />
+            <div class="mosaic-caption">
+              <span>03 / GAME DAY</span>
+              <h3>함께하는 경기</h3>
+              <p>경기 속에서 만드는 특별한 추억</p>
+            </div>
+          </article>
+
+          <!-- 하단 왼쪽 이미지 -->
+          <div class="mosaic-feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=1400&q=85"
+              alt="야구장에서 함께하는 BASEBALL MATES"
+              loading="lazy"
+            />
+
+            <span class="mosaic-image-label"> TOGETHER ON THE FIELD </span>
+          </div>
+
+          <!-- 하단 오른쪽 소개 영역 -->
+          <div class="mosaic-story">
+            <span class="number">BASEBALL MATES / OUR STORY</span>
+
+            <h3>
+              보는 야구에서,<br />
+              <span>함께 뛰는 야구로.</span>
+            </h3>
+
+            <p>
+              BASEBALL MATES는 야구를 좋아하는 사람들이 함께 모여 직접 경기를
+              즐기고 소통하기 위해 만들어진 사회인 야구 커뮤니티입니다.
+            </p>
+
+            <p>
+              실력이나 경험보다 중요한 것은 야구를 즐기려는 마음입니다. 서로를
+              존중하고 함께 성장하며 오래도록 기억에 남을 야구 경험을 만들어
+              갑니다.
+            </p>
+
+            <a href="#recruit" class="mosaic-button">
+              함께할 멤버 알아보기 <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 초보자 환영 -->
+      <section class="beginner-section" id="beginner">
+        <div class="beginner-image">
+          <img
+            src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=1600&q=85"
+            alt="야구장에서 타격을 준비하는 선수"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="beginner-overlay"></div>
+
+        <div class="beginner-content">
+          <p class="eyebrow">EVERYONE IS WELCOME</p>
+
+          <h2>
+            야구가 처음이어도<br />
+            <span>괜찮습니다.</span>
+          </h2>
+
+          <p>
+            야구를 좋아하지만 직접 해본 적은 없나요?<br />
+            경험이 없어도 괜찮습니다.<br />
+            함께 배우고 즐기면서 천천히 시작해 보세요.
+          </p>
+
+          <a href="#recruit" class="button button-light"
+            >참여 방법 알아보기 ↗</a
+          >
+        </div>
+      </section>
+
+      <!-- 활동 갤러리 -->
+      <section class="section gallery-section" id="gallery">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR MOMENTS</p>
+            <h2>함께 만들어 가는 <span>우리의 순간</span></h2>
+          </div>
+
+          <p class="section-heading-side">
+            연습부터 경기까지,<br />
+            BASEBALL MATES의 활동 기록
+          </p>
+        </div>
+
+        <div class="photo-marquee">
+          <div class="marquee-track">
+            <div class="marquee-group">
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=900&q=80"
+                  alt="야구팀 단체 사진"
+                  loading="lazy"
+                />
+                <span>TEAM TOGETHER</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=900&q=80"
+                  alt="투수 연습 장면"
+                  loading="lazy"
+                />
+                <span>PRACTICE DAY</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=900&q=80"
+                  alt="타격 연습 장면"
+                  loading="lazy"
+                />
+                <span>ON THE FIELD</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=900&q=80"
+                  alt="야구 경기장"
+                  loading="lazy"
+                />
+                <span>GAME DAY</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=900&q=80"
+                  alt="야구팀 활동 모습"
+                  loading="lazy"
+                />
+                <span>TEAM SPIRIT</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1560362740-83ba9be1921c?auto=format&fit=crop&w=900&q=80"
+                  alt="야구 경기 모습"
+                  loading="lazy"
+                />
+                <span>PLAY TOGETHER</span>
+              </div>
+            </div>
+
+            <!-- 무한 반복용 복제 영역 -->
+            <div class="marquee-group" aria-hidden="true">
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>TEAM TOGETHER</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>PRACTICE DAY</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>ON THE FIELD</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>GAME DAY</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>TEAM SPIRIT</span>
+              </div>
+
+              <div class="marquee-card">
+                <img
+                  src="https://images.unsplash.com/photo-1560362740-83ba9be1921c?auto=format&fit=crop&w=900&q=80"
+                  alt=""
+                />
+                <span>PLAY TOGETHER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="gallery-note">
+          ※ 현재 사진은 외부 이미지 예시이며, 실제 팀 활동 사진으로 교체할 수
+          있습니다.
+        </p>
+      </section>
+
+      <!-- 모집 -->
+      <section class="recruit-section" id="recruit">
+        <div class="recruit-inner">
+          <div class="recruit-copy">
+            <p class="eyebrow">JOIN BASEBALL MATES</p>
+
+            <h2>
+              이제 관중석에서 나와<br />
+              <span>그라운드 위 주인공이 되어보세요.</span>
+            </h2>
+
+            <p>
+              야구를 좋아하는 성인이라면 누구나 환영합니다.<br />
+              경험이 없어도 함께 시작할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="recruit-action">
+            <span>YOUR BASEBALL STORY STARTS HERE</span>
+            <a href="#contact" class="button button-dark"
+              >모집 안내 및 문의하기 ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 문의하기 / 찾아오시는 길 -->
+      <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <!-- 왼쪽: 찾아오시는 길 -->
+          <div class="contact-location">
+            <div class="contact-location-heading">
+              <p class="eyebrow">LOCATION</p>
+              <h2>찾아오시는 길</h2>
+              <p>BASEBALL MATES를 찾아오시는 길을 안내합니다.</p>
+            </div>
+
+            <div class="contact-map">
+              <iframe
+                src="https://maps.google.com/maps?q=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%82%B0%EC%8B%9C%20%ED%95%98%EC%96%91%EC%9D%8D%20%EA%B0%80%EB%A7%88%EC%8B%A4%EA%B8%B8%2050&output=embed"
+                title="BASEBALL MATES 찾아오시는 길"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="contact-location-info">
+              <div class="contact-address">
+                <span class="contact-location-icon">⌖</span>
+                <p>경북 경산시 하양읍 가마실길 50</p>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%82%B0%EC%8B%9C%20%ED%95%98%EC%96%91%EC%9D%8D%20%EA%B0%80%EB%A7%88%EC%8B%A4%EA%B8%B8%2050"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-map-link"
+              >
+                지도에서 길찾기 <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 오른쪽: 문의하기 -->
+          <div class="contact-form-area">
+            <div class="contact-heading">
+              <p class="eyebrow">CONTACT US</p>
+              <h2>우리와 함께하고 싶다면?</h2>
+              <p>
+                BASEBALL MATES에 대한 궁금한 점이나<br />
+                참여 관련 문의를 남겨주세요.
+              </p>
+            </div>
+
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/mysun4545@naver.com"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="[BASEBALL MATES] 새로운 문의가 접수되었습니다."
+              />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="contact-form-grid">
+                <label class="contact-field">
+                  <span>이름 <i>*</i></span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="이름을 입력해 주세요"
+                    autocomplete="name"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>이메일 <i>*</i></span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="답변받을 이메일 주소"
+                    autocomplete="email"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>연락처 <i>*</i></span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="예: 010-1234-5678"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    maxlength="20"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>문의 유형 <i>*</i></span>
+                  <select name="inquiry_type" required>
+                    <option value="" selected disabled>
+                      문의 유형을 선택해 주세요
+                    </option>
+                    <option value="참여 문의">참여 문의</option>
+                    <option value="팀 활동 문의">팀 활동 문의</option>
+                    <option value="모집 관련 문의">모집 관련 문의</option>
+                    <option value="기타 문의">기타 문의</option>
+                  </select>
+                </label>
+
+                <label class="contact-field contact-field-full">
+                  <span>제목 <i>*</i></span>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="문의 제목을 입력해 주세요"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field contact-field-full">
+                  <span>문의 내용 <i>*</i></span>
+                  <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="문의하실 내용을 자유롭게 작성해 주세요"
+                    required
+                  ></textarea>
+                </label>
+              </div>
+
+              <label class="contact-consent">
+                <input
+                  type="checkbox"
+                  name="privacy_consent"
+                  value="동의"
+                  required
+                />
+                <span
+                  >문의 답변을 위한 개인정보 수집 및 이용에 동의합니다.
+                  <i>*</i></span
+                >
+              </label>
+              <p class="contact-privacy-note">
+                수집 항목: 이름, 이메일, 연락처 / 이용 목적: 문의 확인 및 답변 /
+                문의 처리 목적 달성 후 관련 정보는 삭제합니다.
+              </p>
+
+              <button type="submit" class="contact-submit">
+                문의 보내기 <span>↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#home" class="logo footer-logo">
+            <span class="logo-mark">BM</span>
+            <span class="logo-text">
+              <strong>BASEBALL MATES</strong>
+              <small>PLAY TOGETHER</small>
+            </span>
+          </a>
+
+          <p>보는 야구에서, 함께 뛰는 야구로.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">팀 소개</a>
+          <a href="#activities">팀 활동</a>
+          <a href="#recruit">선수 모집</a>
+          <a href="#contact">문의하기</a>
+        </div>
+
+        <div class="footer-contact">
+          <p class="eyebrow">CONTACT</p>
+          <h3>문의 및 연락</h3>
+          <a href="mailto:mysun4545@naver.com">✉　mysun4545@naver.com</a>
+        </div>
+
+        <!-- SNS 아이콘 디자인: 공식 계정 연결 전까지 장식용으로 표시 -->
+        <div class="footer-socials" aria-label="BASEBALL MATES 소셜 미디어">
+          <span class="footer-social-icon" role="img" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" />
+              <circle cx="12" cy="12" r="4.1" />
+              <circle class="social-dot" cx="17.8" cy="6.5" r="1.15" />
+            </svg>
+          </span>
+          <span class="footer-social-icon" role="img" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 21.5 12a29 29 0 0 0-.5-4.8Z"
+              />
+              <path class="social-play" d="m10 8.8 5.2 3.2-5.2 3.2Z" />
+            </svg>
+          </span>
+          <span class="footer-social-icon" role="img" aria-label="페이스북">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14.2 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H8v3.1h2.8v8Z"
+              />
+            </svg>
+          </span>
+          <span
+            class="footer-social-icon footer-social-kakao"
+            role="img"
+            aria-label="카카오톡"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3.5c-5 0-9 3.2-9 7.2 0 2.6 1.8 4.9 4.5 6.1l-.9 3.4 4.1-2.6h1.3c5 0 9-3.1 9-7s-4-7.1-9-7.1Z"
+              />
+              <path
+                class="social-kakao-text"
+                d="M7.2 9.3h9.6v1.5h-3.8v4.1H11v-4.1H7.2Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© BASEBALL MATES. ALL RIGHTS RESERVED.</span>
+        <span>DAEGU · GYEONGBUK</span>
+      </div>
+    </footer>
+
+    <!-- 최상단 이동 버튼 -->
+    <a href="#home" class="top-button" aria-label="페이지 최상단으로 이동">
+      <span>↑</span>
+      <small>TOP</small>
+    </a>
+  </body>
 </html>
