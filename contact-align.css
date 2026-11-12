@@ -1,0 +1,59 @@
+/* =================================
+   CONTACT 정렬 보정 (style.css 뒤에 불러오기)
+   지도 상단 = 문의 폼 상단
+   주소·길찾기 하단 = 문의 폼 하단
+   → 두 칸을 하나의 그리드로 묶어 줄(row)을 공유시킴
+================================= */
+
+@media (min-width: 1001px) {
+  .contact-inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* 제목 / 지도·폼 / 주소줄 */
+    column-gap: clamp(30px, 4.5vw, 65px);
+    row-gap: 0;
+    align-items: stretch;
+  }
+
+  /* 두 래퍼를 투명하게 만들어 자식들을 바깥 그리드에 직접 배치 */
+  .contact-location,
+  .contact-form-area {
+    display: contents;
+  }
+
+  /* 제목: 1행 (두 제목 중 더 큰 쪽 높이에 맞춰짐) */
+  .contact-location-heading,
+  .contact-heading {
+    min-height: 0;
+    margin-bottom: 22px;
+  }
+  .contact-location-heading { grid-column: 1; grid-row: 1; }
+  .contact-heading          { grid-column: 2; grid-row: 1; }
+
+  /* 지도: 2행 / 문의 폼: 2~3행 → 상단선이 항상 같음 */
+  .contact-map {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    height: auto;
+    min-height: 365px;
+  }
+  .contact-map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-form {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+
+  /* 주소·길찾기: 3행 → 하단선이 폼 하단과 같음 */
+  .contact-location-info {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    margin-top: 20px;
+  }
+}
