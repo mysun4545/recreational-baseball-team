@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선수 모집 · 문의하기 | A.C.E</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="top">
+    <input type="checkbox" id="menu-toggle" />
+    <input type="checkbox" id="search-toggle" />
+
+    <header class="header">
+      <div class="header-top">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">ACE</span>
+          <span class="logo-text">
+            <strong>A.C.E</strong>
+            <small>BASEBALL CLUB</small>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <label for="search-toggle" class="search-button">⌕ 검색</label>
+          <a href="contact.html" class="header-join">참여하기 ↗</a>
+
+          <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-inner">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="beginner.html">초보자 환영</a>
+          <a href="gallery.html">활동 갤러리</a>
+          <a href="contact.html" aria-current="page">문의하기</a>
+        </div>
+      </nav>
+
+      <div class="search-panel">
+        <div class="search-panel-inner">
+          <p class="eyebrow">FIND WHAT YOU NEED</p>
+          <h2>무엇을 찾고 있나요?</h2>
+
+          <form action="about.html" method="get">
+            <input
+              type="search"
+              placeholder="팀 소개, 활동 안내, 모집 정보..."
+            />
+            <button type="submit">검색하기 ↗</button>
+          </form>
+
+          <label for="search-toggle" class="search-close">닫기 ✕</label>
+        </div>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="about.html">팀 소개 <span>01</span></a>
+        <a href="activities.html">팀 활동 <span>02</span></a>
+        <a href="beginner.html">초보자 환영 <span>03</span></a>
+        <a href="gallery.html">활동 갤러리 <span>04</span></a>
+        <a href="contact.html" aria-current="page">문의하기 <span>05</span></a>
+      </div>
+    </header>
+
+    <main>
+      <!-- 모집 -->
+      <section class="recruit-section" id="recruit">
+        <div class="recruit-inner">
+          <div class="recruit-copy">
+            <p class="eyebrow">JOIN A.C.E</p>
+
+            <h2>
+              이제 관중석에서 나와<br />
+              <span>그라운드 위 주인공이 되어보세요.</span>
+            </h2>
+
+            <p>
+              야구를 좋아하는 성인이라면 누구나 환영합니다.<br />
+              경험이 없어도 함께 시작할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="recruit-action">
+            <span>YOUR BASEBALL STORY STARTS HERE</span>
+            <a href="#contact" class="button button-dark"
+              >모집 안내 및 문의하기 ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 문의하기 / 찾아오시는 길 -->
+      <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <!-- 왼쪽: 찾아오시는 길 -->
+          <div class="contact-location">
+            <div class="contact-location-heading">
+              <p class="eyebrow">LOCATION</p>
+              <h2>찾아오시는 길</h2>
+              <p>A.C.E를 찾아오시는 길을 안내합니다.</p>
+            </div>
+
+            <div class="contact-map">
+              <iframe
+                src="https://maps.google.com/maps?q=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%82%B0%EC%8B%9C%20%ED%95%98%EC%96%91%EC%9D%8D%20%EA%B0%80%EB%A7%88%EC%8B%A4%EA%B8%B8%2050&output=embed"
+                title="A.C.E 찾아오시는 길"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="contact-location-info">
+              <div class="contact-address">
+                <span class="contact-location-icon">⌖</span>
+                <p>경북 경산시 하양읍 가마실길 50</p>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%82%B0%EC%8B%9C%20%ED%95%98%EC%96%91%EC%9D%8D%20%EA%B0%80%EB%A7%88%EC%8B%A4%EA%B8%B8%2050"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-map-link"
+              >
+                지도에서 길찾기 <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 오른쪽: 문의하기 -->
+          <div class="contact-form-area">
+            <div class="contact-heading">
+              <p class="eyebrow">CONTACT US</p>
+              <h2>우리와 함께하고 싶다면?</h2>
+              <p>
+                A.C.E에 대한 궁금한 점이나<br />
+                참여 관련 문의를 남겨주세요.
+              </p>
+            </div>
+
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/mysun4545@naver.com"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="[A.C.E] 새로운 문의가 접수되었습니다."
+              />
+              <input type="hidden" name="_template" value="table" />
+
+              <div class="contact-form-grid">
+                <label class="contact-field">
+                  <span>이름 <i>*</i></span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="이름을 입력해 주세요"
+                    autocomplete="name"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>이메일 <i>*</i></span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="답변받을 이메일 주소"
+                    autocomplete="email"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>연락처 <i>*</i></span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="예: 010-1234-5678"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    maxlength="20"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field">
+                  <span>문의 유형 <i>*</i></span>
+                  <select name="inquiry_type" required>
+                    <option value="" selected disabled>
+                      문의 유형을 선택해 주세요
+                    </option>
+                    <option value="참여 문의">참여 문의</option>
+                    <option value="팀 활동 문의">팀 활동 문의</option>
+                    <option value="모집 관련 문의">모집 관련 문의</option>
+                    <option value="기타 문의">기타 문의</option>
+                  </select>
+                </label>
+
+                <label class="contact-field contact-field-full">
+                  <span>제목 <i>*</i></span>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="문의 제목을 입력해 주세요"
+                    required
+                  />
+                </label>
+
+                <label class="contact-field contact-field-full">
+                  <span>문의 내용 <i>*</i></span>
+                  <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="문의하실 내용을 자유롭게 작성해 주세요"
+                    required
+                  ></textarea>
+                </label>
+              </div>
+
+              <label class="contact-consent">
+                <input
+                  type="checkbox"
+                  name="privacy_consent"
+                  value="동의"
+                  required
+                />
+                <span
+                  >문의 답변을 위한 개인정보 수집 및 이용에 동의합니다.
+                  <i>*</i></span
+                >
+              </label>
+              <p class="contact-privacy-note">
+                수집 항목: 이름, 이메일, 연락처 / 이용 목적: 문의 확인 및 답변 /
+                문의 처리 목적 달성 후 관련 정보는 삭제합니다.
+              </p>
+
+              <button type="submit" class="contact-submit">
+                문의 보내기 <span>↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-mark">ACE</span>
+            <span class="logo-text">
+              <strong>A.C.E</strong>
+              <small>BASEBALL CLUB</small>
+            </span>
+          </a>
+
+          <p>보는 야구에서, 함께 뛰는 야구로.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="footer-contact">
+          <p class="eyebrow">CONTACT</p>
+          <h3>문의 및 연락</h3>
+          <a href="mailto:mysun4545@naver.com">✉　mysun4545@naver.com</a>
+        </div>
+
+        <!-- SNS 아이콘 디자인: 공식 계정 연결 전까지 장식용으로 표시 -->
+        <div class="footer-socials" aria-label="A.C.E 소셜 미디어">
+          <span class="footer-social-icon" role="img" aria-label="인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" />
+              <circle cx="12" cy="12" r="4.1" />
+              <circle class="social-dot" cx="17.8" cy="6.5" r="1.15" />
+            </svg>
+          </span>
+          <span class="footer-social-icon" role="img" aria-label="유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 21.5 12a29 29 0 0 0-.5-4.8Z"
+              />
+              <path class="social-play" d="m10 8.8 5.2 3.2-5.2 3.2Z" />
+            </svg>
+          </span>
+          <span class="footer-social-icon" role="img" aria-label="페이스북">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14.2 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H8v3.1h2.8v8Z"
+              />
+            </svg>
+          </span>
+          <span
+            class="footer-social-icon footer-social-kakao"
+            role="img"
+            aria-label="카카오톡"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3.5c-5 0-9 3.2-9 7.2 0 2.6 1.8 4.9 4.5 6.1l-.9 3.4 4.1-2.6h1.3c5 0 9-3.1 9-7s-4-7.1-9-7.1Z"
+              />
+              <path
+                class="social-kakao-text"
+                d="M7.2 9.3h9.6v1.5h-3.8v4.1H11v-4.1H7.2Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© A.C.E. ALL RIGHTS RESERVED.</span>
+        <span>DAEGU · GYEONGBUK</span>
+      </div>
+    </footer>
+
+    <!-- 최상단 이동 버튼 -->
+    <a href="#top" class="top-button" aria-label="페이지 최상단으로 이동">
+      <span>↑</span>
+      <small>TOP</small>
+    </a>
+  </body>
+</html>
