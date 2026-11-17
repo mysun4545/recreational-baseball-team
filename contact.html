@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>선수 모집 · 문의하기 | A.C.E</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="contact-align.css" />
 
@@ -83,7 +87,7 @@
       <!-- 모집 -->
       <section class="recruit-section" id="recruit">
         <div class="recruit-inner">
-          <div class="recruit-copy">
+          <div class="recruit-copy" data-aos="fade-right">
             <p class="eyebrow">JOIN A.C.E</p>
 
             <h2>
@@ -97,7 +101,7 @@
             </p>
           </div>
 
-          <div class="recruit-action">
+          <div class="recruit-action" data-aos="fade-left" data-aos-delay="150">
             <span>YOUR BASEBALL STORY STARTS HERE</span>
             <a href="#contact" class="button button-dark"
               >모집 안내 및 문의하기 ↗</a
@@ -110,7 +114,7 @@
       <section class="contact-section" id="contact">
         <div class="contact-inner">
           <!-- 왼쪽: 찾아오시는 길 -->
-          <div class="contact-location">
+          <div class="contact-location" data-aos="fade-right">
             <div class="contact-location-heading">
               <p class="eyebrow">LOCATION</p>
               <h2>찾아오시는 길</h2>
@@ -144,7 +148,7 @@
           </div>
 
           <!-- 오른쪽: 문의하기 -->
-          <div class="contact-form-area">
+          <div class="contact-form-area" data-aos="fade-left" data-aos-delay="150">
             <div class="contact-heading">
               <p class="eyebrow">CONTACT US</p>
               <h2>우리와 함께하고 싶다면?</h2>
@@ -156,16 +160,10 @@
 
             <form
               class="contact-form"
-              action="https://formsubmit.co/mysun4545@naver.com"
-              method="POST"
+              id="contact-form"
+              action="#contact"
+              method="post"
             >
-              <input
-                type="hidden"
-                name="_subject"
-                value="[A.C.E] 새로운 문의가 접수되었습니다."
-              />
-              <input type="hidden" name="_template" value="table" />
-
               <div class="contact-form-grid">
                 <label class="contact-field">
                   <span>이름 <i>*</i></span>
@@ -256,6 +254,12 @@
               <button type="submit" class="contact-submit">
                 문의 보내기 <span>↗</span>
               </button>
+              <p
+                class="contact-form-status"
+                id="contact-form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
             </form>
           </div>
         </div>
@@ -263,7 +267,7 @@
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo footer-logo">
@@ -342,5 +346,68 @@
       <span>↑</span>
       <small>TOP</small>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      const contactForm = document.querySelector("#contact-form");
+      const contactSubmit = contactForm.querySelector('button[type="submit"]');
+      const submitButtonContent = contactSubmit.innerHTML;
+      const contactFormStatus = document.querySelector("#contact-form-status");
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = "전송 중...";
+        contactFormStatus.textContent = "";
+        contactFormStatus.dataset.state = "";
+
+        try {
+          const formData = new FormData(contactForm);
+          const name = formData.get("name").trim();
+          const email = formData.get("email").trim();
+          const templateParams = {
+            name,
+            user_name: name,
+            email,
+            user_email: email,
+            reply_to: email,
+            phone: formData.get("phone").trim(),
+            inquiry_type: formData.get("inquiry_type"),
+            subject: formData.get("subject").trim(),
+            message: formData.get("message").trim(),
+          };
+
+          await emailjs.send(
+            "service_ubs20c7",
+            "template_84x6vsu",
+            templateParams,
+            { publicKey: "5GfLruUNCPAGunP6a" },
+          );
+          contactFormStatus.dataset.state = "success";
+          contactFormStatus.textContent = "문의가 성공적으로 전송되었습니다.";
+          contactForm.reset();
+        } catch (error) {
+          console.error("EmailJS 문의 전송 실패:", error);
+          contactFormStatus.dataset.state = "error";
+          const errorDetails =
+            error && typeof error === "object" && typeof error.text === "string"
+              ? error.text
+              : error instanceof Error
+                ? error.message
+                : String(error);
+          contactFormStatus.textContent = `전송에 실패했습니다: ${errorDetails}`;
+        } finally {
+          contactSubmit.disabled = false;
+          contactSubmit.innerHTML = submitButtonContent;
+        }
+      });
+
+      AOS.init({
+        duration: 800,
+        offset: 80,
+        once: true,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+    </script>
   </body>
 </html>

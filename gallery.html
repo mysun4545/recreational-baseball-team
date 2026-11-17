@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>활동 갤러리 | A.C.E</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,7 +84,7 @@
     <main>
       <!-- 활동 갤러리 -->
       <section class="section gallery-section" id="gallery">
-        <div class="section-heading">
+        <div class="section-heading" data-aos="fade-down">
           <div>
             <p class="eyebrow">OUR MOMENTS</p>
             <h2>함께 만들어 가는 <span>우리의 순간</span></h2>
@@ -92,7 +96,7 @@
           </p>
         </div>
 
-        <div class="photo-marquee">
+        <div class="photo-marquee" data-aos="fade-up" data-aos-delay="100">
           <div class="marquee-track">
             <div class="marquee-group">
               <div class="marquee-card">
@@ -203,7 +207,7 @@
           </div>
         </div>
 
-        <p class="gallery-note">
+        <p class="gallery-note" data-aos="fade-up" data-aos-delay="200">
           ※ 현재 사진은 외부 이미지 예시이며, 실제 팀 활동 사진으로 교체할 수
           있습니다.
         </p>
@@ -211,7 +215,7 @@
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo footer-logo">
@@ -290,5 +294,14 @@
       <span>↑</span>
       <small>TOP</small>
     </a>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 80,
+        once: true,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+    </script>
   </body>
 </html>

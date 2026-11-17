@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>초보자 환영 | A.C.E</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,40 +87,93 @@
 
     <main>
       <!-- 초보자 환영 -->
-      <section class="beginner-section" id="beginner">
-        <div class="beginner-image">
-          <img
-            src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=1600&q=85"
-            alt="야구장에서 타격을 준비하는 선수"
-            loading="lazy"
-          />
+      <section
+        class="beginner-section swiper beginner-swiper"
+        id="beginner"
+        aria-label="초보자 환영 안내"
+        data-aos="fade-up"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="beginner-image">
+              <img
+                src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=1600&q=85"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="beginner-overlay"></div>
+            <div class="beginner-content">
+              <p class="eyebrow">EVERYONE IS WELCOME</p>
+              <h2>
+                야구가 처음이어도<br />
+                <span>괜찮습니다.</span>
+              </h2>
+              <p>
+                야구를 좋아하지만 직접 해본 적은 없나요?<br />
+                경험이 없어도 괜찮습니다.<br />
+                함께 배우고 즐기면서 천천히 시작해 보세요.
+              </p>
+              <a href="contact.html" class="button button-light">참여 방법 알아보기 ↗</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="beginner-image">
+              <img
+                src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=1600&q=85"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="beginner-overlay"></div>
+            <div class="beginner-content">
+              <p class="eyebrow">EVERYONE IS WELCOME</p>
+              <h2>
+                직접 해본 적 없어도<br />
+                <span>괜찮습니다.</span>
+              </h2>
+              <p>
+                경험이 없어도 괜찮습니다.<br />
+                함께 배우고 즐기면서<br />
+                천천히 시작해 보세요.
+              </p>
+              <a href="contact.html" class="button button-light">참여 방법 알아보기 ↗</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="beginner-image">
+              <img
+                src="https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=1600&q=85"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="beginner-overlay"></div>
+            <div class="beginner-content">
+              <p class="eyebrow">EVERYONE IS WELCOME</p>
+              <h2>
+                함께 배우며<br />
+                <span>천천히 시작해요.</span>
+              </h2>
+              <p>
+                야구를 좋아한다는 마음이면 충분합니다.<br />
+                함께 배우고 즐기면서<br />
+                새로운 경험을 만들어 보세요.
+              </p>
+              <a href="contact.html" class="button button-light">참여 방법 알아보기 ↗</a>
+            </div>
+          </div>
         </div>
-
-        <div class="beginner-overlay"></div>
-
-        <div class="beginner-content">
-          <p class="eyebrow">EVERYONE IS WELCOME</p>
-
-          <h2>
-            야구가 처음이어도<br />
-            <span>괜찮습니다.</span>
-          </h2>
-
-          <p>
-            야구를 좋아하지만 직접 해본 적은 없나요?<br />
-            경험이 없어도 괜찮습니다.<br />
-            함께 배우고 즐기면서 천천히 시작해 보세요.
-          </p>
-
-          <a href="contact.html" class="button button-light"
-            >참여 방법 알아보기 ↗</a
-          >
-        </div>
+        <div class="swiper-button-prev" aria-label="이전 슬라이드"></div>
+        <div class="swiper-button-next" aria-label="다음 슬라이드"></div>
+        <div class="swiper-pagination"></div>
       </section>
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo footer-logo">
@@ -191,5 +252,36 @@
       <span>↑</span>
       <small>TOP</small>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      new Swiper(".beginner-swiper", {
+        loop: true,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        navigation: {
+          nextEl: ".beginner-swiper .swiper-button-next",
+          prevEl: ".beginner-swiper .swiper-button-prev",
+        },
+        pagination: {
+          el: ".beginner-swiper .swiper-pagination",
+          clickable: true,
+        },
+        autoplay: prefersReducedMotion
+          ? false
+          : { delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false },
+      });
+
+      AOS.init({
+        duration: 800,
+        offset: 80,
+        once: true,
+        disable: prefersReducedMotion,
+      });
+    </script>
   </body>
 </html>

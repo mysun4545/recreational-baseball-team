@@ -340,16 +340,26 @@ input {
   min-height: 690px;
   height: min(760px, 78vw);
   position: relative;
+  overflow: hidden;
+  background: var(--forest-dark);
+}
+
+.hero .swiper-wrapper,
+.beginner-section .swiper-wrapper {
+  height: 100%;
+}
+
+.hero .swiper-slide,
+.beginner-section .swiper-slide {
+  position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--forest-dark);
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=2000&q=90");
   background-size: cover;
   background-position: center 48%;
   transform: scale(1.02);
@@ -409,6 +419,7 @@ input {
 
 .hero-bottom {
   position: absolute;
+  z-index: 3;
   bottom: 27px;
   left: 7%;
   right: 7%;
@@ -417,6 +428,43 @@ input {
   color: rgba(255, 255, 255, 0.65);
   font-size: 9px;
   letter-spacing: 2px;
+}
+
+.hero-swiper .swiper-pagination,
+.beginner-swiper .swiper-pagination {
+  z-index: 3;
+}
+
+.hero-swiper .swiper-pagination {
+  bottom: 52px;
+}
+
+.hero-swiper .swiper-pagination-bullet,
+.beginner-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--white);
+  opacity: 0.55;
+}
+
+.hero-swiper .swiper-pagination-bullet-active,
+.beginner-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next,
+.beginner-swiper .swiper-button-prev,
+.beginner-swiper .swiper-button-next {
+  z-index: 3;
+  color: var(--white);
+}
+
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after,
+.beginner-swiper .swiper-button-prev::after,
+.beginner-swiper .swiper-button-next::after {
+  font-size: 24px;
 }
 
 /* INTRO */
@@ -612,9 +660,8 @@ input {
 
 .beginner-section {
   min-height: 570px;
+  height: 570px;
   position: relative;
-  display: flex;
-  align-items: center;
   overflow: hidden;
   background: var(--forest-dark);
 }
@@ -631,6 +678,7 @@ input {
 .beginner-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(21, 43, 36, 0.9),
@@ -854,7 +902,7 @@ input {
 /* FOOTER */
 
 .footer {
-  padding: 55px 7% 20px;
+  padding: 24px 7% 10px;
   background: var(--forest-dark);
   color: white;
 }
@@ -866,7 +914,7 @@ input {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  padding-bottom: 45px;
+  padding-bottom: 12px;
 }
 
 .footer-logo .logo-mark {
@@ -883,7 +931,7 @@ input {
 }
 
 .footer-brand > p {
-  margin-top: 17px;
+  margin-top: 10px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
 }
@@ -905,7 +953,7 @@ input {
 .footer-bottom {
   max-width: 1250px;
   margin: auto;
-  padding-top: 20px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: space-between;
@@ -1179,6 +1227,7 @@ input {
 
   .beginner-section {
     min-height: 540px;
+    height: 540px;
   }
 
   .beginner-content {
@@ -1247,13 +1296,13 @@ input {
   }
 
   .footer {
-    padding: 45px 7% 20px;
+    padding: 22px 7% 10px;
   }
 
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   .footer-links {
@@ -1683,17 +1732,17 @@ input {
 .footer-contact {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 30px 0 35px;
+  padding: 6px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-contact .eyebrow {
-  margin-bottom: 9px;
+  margin-bottom: 6px;
   color: var(--sage-light);
 }
 
 .footer-contact h3 {
-  margin-bottom: 14px;
+  margin-bottom: 8px;
   color: var(--white);
   font-size: 20px;
   font-weight: 500;
@@ -2099,8 +2148,28 @@ input {
   background: var(--sage);
 }
 
+.contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
 .contact-submit span {
   font-size: 17px;
+}
+
+.contact-form-status {
+  min-height: 1.5em;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.contact-form-status[data-state="success"] {
+  color: var(--forest-soft);
+}
+
+.contact-form-status[data-state="error"] {
+  color: #b42318;
 }
 
 /* TABLET */

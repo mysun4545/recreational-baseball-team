@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>팀 소개 | A.C.E</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,7 +84,7 @@
     <main>
       <!-- 팀 소개 -->
       <section class="section mates-editorial-section" id="about">
-        <div class="section-heading">
+        <div class="section-heading" data-aos="fade-down">
           <div>
             <p class="eyebrow">ABOUT A.C.E</p>
             <h2>야구를 좋아하는 마음으로 <span>하나가 되다.</span></h2>
@@ -94,7 +98,7 @@
 
         <div class="mates-mosaic">
           <!-- 하단 왼쪽 이미지 -->
-          <div class="mosaic-feature-image">
+          <div class="mosaic-feature-image" data-aos="fade-up">
             <img
               src="https://images.unsplash.com/photo-1721833542613-2b9534c745e2?auto=format&fit=crop&w=1400&q=85"
               alt="야구장에서 함께하는 A.C.E"
@@ -105,7 +109,7 @@
           </div>
 
           <!-- 하단 오른쪽 소개 영역 -->
-          <div class="mosaic-story">
+          <div class="mosaic-story" data-aos="fade-up" data-aos-delay="150">
             <span class="number">A.C.E / OUR STORY</span>
 
             <h3>
@@ -133,7 +137,7 @@
     </main>
 
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer-inner">
         <div class="footer-brand">
           <a href="index.html" class="logo footer-logo">
@@ -212,5 +216,14 @@
       <span>↑</span>
       <small>TOP</small>
     </a>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 80,
+        once: true,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+    </script>
   </body>
 </html>
