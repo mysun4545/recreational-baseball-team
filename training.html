@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>훈련방법 | A.C.E</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="top">
+    <input type="checkbox" id="menu-toggle" />
+    <input type="checkbox" id="search-toggle" />
+
+    <header class="header">
+      <div class="header-top">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">ACE</span>
+          <span class="logo-text">
+            <strong>A.C.E</strong>
+            <small>BASEBALL CLUB</small>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <label for="search-toggle" class="search-button">⌕ 검색</label>
+          <a href="contact.html" class="header-join">참여하기 ↗</a>
+
+          <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-inner">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="training.html" aria-current="page">훈련방법</a>
+          <a href="equipment.html">사용장비</a>
+          <a href="gallery.html">활동 갤러리</a>
+          <a href="contact.html">문의하기</a>
+        </div>
+      </nav>
+
+      <div class="search-panel">
+        <div class="search-panel-inner">
+          <p class="eyebrow">FIND WHAT YOU NEED</p>
+          <h2>무엇을 찾고 있나요?</h2>
+
+          <form action="about.html" method="get">
+            <input
+              type="search"
+              placeholder="팀 소개, 활동 안내, 모집 정보..."
+            />
+            <button type="submit">검색하기 ↗</button>
+          </form>
+
+          <label for="search-toggle" class="search-close">닫기 ✕</label>
+        </div>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="about.html">팀 소개 <span>01</span></a>
+        <a href="activities.html">팀 활동 <span>02</span></a>
+        <a href="training.html" aria-current="page">훈련방법 <span>03</span></a>
+        <a href="equipment.html">사용장비 <span>04</span></a>
+        <a href="gallery.html">활동 갤러리 <span>05</span></a>
+        <a href="contact.html">문의하기 <span>06</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section training-section" id="training">
+        <div class="section-heading" data-aos="fade-down">
+          <div>
+            <p class="eyebrow">BASEBALL TRAINING GUIDE</p>
+            <h1>
+              기초 체력부터 실전까지,<br />
+              <span>균형 있게 훈련해요.</span>
+            </h1>
+          </div>
+          <p class="section-heading-side">
+            체력과 기본기를 다지고<br />
+            경기 경험으로 한 단계씩 성장하기
+          </p>
+        </div>
+
+        <div class="training-grid">
+          <article class="training-card" data-aos="fade-up">
+            <div class="training-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=1000&q=85"
+                alt="야구 훈련을 준비하는 선수"
+                loading="lazy"
+              />
+              <span class="training-number">01 / CONDITIONING</span>
+            </div>
+            <div class="training-card-content">
+              <h2>체력 강화와 부상 예방</h2>
+              <p class="training-intro">
+                주말에 갑자기 큰 힘을 쓰지 않도록 평소 체력과 몸의 준비 상태를
+                챙겨요.
+              </p>
+              <ul>
+                <li>
+                  <strong>코어·하체</strong> 주 2~3회 스쿼트, 데드리프트,
+                  플랭크 등으로 스윙과 송구의 힘 전달을 돕습니다.
+                </li>
+                <li><strong>회전근개</strong> 탄성 밴드 운동으로 어깨 안정성을 기릅니다.</li>
+                <li><strong>준비운동</strong> 스트레칭과 가벼운 유산소 후 단계별 캐치볼로 몸을 풉니다.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="training-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="training-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1686256983145-54450005ae2a?auto=format&fit=crop&w=1000&q=85"
+                alt="타격 연습 장면"
+                loading="lazy"
+              />
+              <span class="training-number">02 / BATTING</span>
+            </div>
+            <div class="training-card-content">
+              <h2>타격 훈련</h2>
+              <p class="training-intro">
+                큰 스윙보다 투구 타이밍에 맞춘 간결한 스윙과 정확한 임팩트를
+                연습해요.
+              </p>
+              <ul>
+                <li>티배팅, 타이어 치기, 배팅장 연습을 꾸준히 병행합니다.</li>
+                <li>스윙 영상을 촬영해 정타와 빗맞은 타구의 중심 이동·스윙 궤적을 비교합니다.</li>
+              </ul>
+              <a
+                class="training-video"
+                href="https://www.youtube.com/watch?v=yKYn2LHT1bs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="training-video-label">WATCH · 6:38</span>
+                <strong>시합에서 타격 잘하는 방법, 타격레슨</strong>
+                <span>글러브야구레슨 · YouTube ↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="training-card" data-aos="fade-up">
+            <div class="training-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=1000&q=85"
+                alt="수비와 투구를 연습하는 야구팀"
+                loading="lazy"
+              />
+              <span class="training-number">03 / FIELDING & PITCHING</span>
+            </div>
+            <div class="training-card-content">
+              <h2>수비 및 투구 훈련</h2>
+              <p class="training-intro">
+                포구와 송구의 연결 동작, 투구 시 하체 회전과 밸런스를 차근차근
+                점검해요.
+              </p>
+              <ul>
+                <li>
+                  <strong>수비 기본기</strong> 내·외야 펑고를 받고 포구 후 빠른
+                  송구 스텝과 그립 전환을 반복합니다.
+                </li>
+                <li>
+                  <strong>투구 밸런스</strong> 키킹·스트라이드에서 상체가 일찍
+                  열리거나 팔이 뒤로 빠지지 않는지 살핍니다.
+                </li>
+                <li>하체 회전과 골반 턴이 자연스럽게 이어지도록 연습합니다.</li>
+              </ul>
+              <a
+                class="training-video"
+                href="https://www.youtube.com/watch?v=NxuykBXTBOQ&t=75"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="training-video-label">VIDEO LESSON</span>
+                <strong>[야구너두] 사회인야구 구독자 원포인트 레슨</strong>
+                <span>패자부활전 · YouTube ↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="training-card training-card-practice"
+            data-aos="fade-up"
+            data-aos-delay="80"
+          >
+            <div class="training-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1560362740-83ba9be1921c?auto=format&fit=crop&w=1000&q=85"
+                alt="야구 경기 중인 선수들"
+                loading="lazy"
+              />
+              <span class="training-number">04 / PRACTICE & GAME</span>
+            </div>
+            <div class="training-card-content">
+              <h2>레슨과 실전 병행</h2>
+              <p class="training-intro">
+                배운 기본기를 경기에서 써 보고, 드러난 약점을 다음 연습에서
+                보완하는 순환을 만들어 보세요.
+              </p>
+              <div
+                class="training-cycle"
+                aria-label="레슨, 실전 경기, 다음 연습의 반복"
+              >
+                <span>기본기 레슨</span>
+                <span aria-hidden="true">→</span>
+                <span>팀·용병 경기</span>
+                <span aria-hidden="true">→</span>
+                <span>약점 보완</span>
+              </div>
+              <div class="training-plan">
+                <h3>나에게 맞는 훈련 계획을 세우려면</h3>
+                <p>
+                  구력과 주 포지션, 주당 훈련 시간과 장소, 우선 개선하고 싶은
+                  기술을 정리해 보세요.
+                </p>
+                <a
+                  class="training-resource"
+                  href="https://blog.naver.com/yuyuyu81/224405662736"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  레슨과 실전 경험을 병행하는 방법 ↗
+                </a>
+                <a href="contact.html" class="button button-outline-dark">
+                  A.C.E에 문의하기 ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="training-safety">
+          운동 강도와 중량은 현재 체력에 맞춰 서서히 높이고, 통증이 느껴지면
+          훈련을 멈추고 전문가와 상담하세요.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer" data-aos="fade-up">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-mark">ACE</span>
+            <span class="logo-text">
+              <strong>A.C.E</strong>
+              <small>BASEBALL CLUB</small>
+            </span>
+          </a>
+          <p>보는 야구에서, 함께 뛰는 야구로.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="training.html">훈련방법</a>
+          <a href="equipment.html">사용장비</a>
+          <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="footer-contact">
+          <p class="eyebrow">CONTACT</p>
+          <h3>문의 및 연락</h3>
+          <a href="mailto:mysun4545@naver.com">✉　mysun4545@naver.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© A.C.E. ALL RIGHTS RESERVED.</span>
+        <span>DAEGU · GYEONGBUK</span>
+      </div>
+    </footer>
+
+    <a href="#top" class="top-button" aria-label="페이지 최상단으로 이동">
+      <span>↑</span>
+      <small>TOP</small>
+    </a>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 80,
+        once: true,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      });
+    </script>
+  </body>
+</html>

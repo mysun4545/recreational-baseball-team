@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용장비 | A.C.E</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        background: #192c29;
+        color: #263b38;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      /* 전체 사용 장비 페이지 */
+      .equipment-page {
+        position: relative;
+        min-height: 100vh;
+        padding: 55px 5% 45px;
+        overflow: hidden;
+        background:
+          linear-gradient(rgba(25, 44, 41, 0.88), rgba(25, 44, 41, 0.94)),
+          url("https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=2000&q=85")
+            center / cover fixed;
+      }
+
+      /* 상단 제목 */
+      .equipment-header {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+
+      .equipment-brand {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        color: #dce5d8;
+        margin-bottom: 15px;
+      }
+
+      .equipment-header h1 {
+        font-size: clamp(34px, 5vw, 62px);
+        font-weight: 800;
+        letter-spacing: -2px;
+        line-height: 1.2;
+      }
+
+      .equipment-header h1 span {
+        color: #91bd98;
+      }
+
+      .equipment-header > p:last-child {
+        color: #e1e9df;
+        font-size: 16px;
+        margin-top: 17px;
+      }
+
+      /* 야구장 + 장비 정보 */
+      .equipment-layout {
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 35px;
+      }
+
+      /* 야구장 영역 */
+      .field-area {
+        position: relative;
+        min-width: 0;
+        padding: 20px 0;
+      }
+
+      .field-label {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #dce8d7;
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
+        letter-spacing: 3px;
+        z-index: 2;
+      }
+
+      .baseball-field {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 600 / 550;
+        max-height: 570px;
+        background:
+          linear-gradient(rgba(25, 44, 41, 0.08), rgba(25, 44, 41, 0.16)),
+          url("https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=1400&q=85")
+            center / cover;
+        border: 1px solid rgba(226, 236, 220, 0.24);
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+      }
+
+      .baseball-field svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.16));
+      }
+
+      /* 포지션 버튼 */
+      .position-marker {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: clamp(48px, 6vw, 68px);
+        height: clamp(48px, 6vw, 68px);
+        border: 2px solid rgba(230, 240, 222, 0.85);
+        border-radius: 50%;
+        background: rgba(25, 53, 41, 0.94);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: 0.25s ease;
+        z-index: 3;
+      }
+
+      .position-marker strong {
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .position-marker span {
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .position-marker:hover,
+      .position-marker.active {
+        background: #a9c98e;
+        color: #203b2d;
+        border: 3px solid #fff;
+        box-shadow:
+          0 0 0 5px rgba(220, 237, 184, 0.2),
+          0 0 25px rgba(225, 239, 164, 0.8);
+        transform: translate(-50%, -50%) scale(1.12);
+      }
+
+      /* 포지션 위치 */
+      .pos-lf {
+        left: 17%;
+        top: 33%;
+      }
+      .pos-cf {
+        left: 50%;
+        top: 15%;
+      }
+      .pos-rf {
+        left: 83%;
+        top: 33%;
+      }
+      .pos-ss {
+        left: 40%;
+        top: 46%;
+      }
+      .pos-2b {
+        left: 60%;
+        top: 46%;
+      }
+      .pos-3b {
+        left: 23%;
+        top: 65%;
+      }
+      .pos-1b {
+        left: 77%;
+        top: 65%;
+      }
+      .pos-p {
+        left: 50%;
+        top: 61%;
+      }
+      .pos-c {
+        left: 50%;
+        top: 89%;
+      }
+
+      /* 오른쪽 장비 카드 */
+      .equipment-card {
+        background: #f3f0e7;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+        min-width: 0;
+      }
+
+      .equipment-card-top {
+        min-height: 225px;
+        position: relative;
+        padding: 35px;
+        color: #fff;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(25, 52, 43, 0.97),
+            rgba(25, 52, 43, 0.65)
+          ),
+          url("https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1000&q=85")
+            center / cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .equipment-card-top h2 {
+        font-size: 43px;
+        font-weight: 800;
+        margin-bottom: 2px;
+      }
+
+      .equipment-card-top .english-name {
+        font-family: "Montserrat", sans-serif;
+        color: #91bd98;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+
+      .equipment-card-top .position-description {
+        font-size: 13px;
+        line-height: 1.9;
+        color: #edf1e9;
+        max-width: 420px;
+      }
+
+      /* 장비 목록 */
+      .equipment-card-body {
+        padding: 25px 28px 22px;
+      }
+
+      .equipment-list-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        font-size: 19px;
+        font-weight: 800;
+      }
+
+      .equipment-list-title::before {
+        content: "✦";
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #527b5d;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+      }
+
+      .equipment-list {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .equipment-item {
+        text-align: center;
+        min-width: 0;
+      }
+
+      .equipment-item-visual {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border: 1px solid #d9d4c7;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #e8e3d8;
+        margin-bottom: 9px;
+        box-shadow: inset 0 0 10px rgba(60, 50, 30, 0.04);
+      }
+
+      .equipment-item-visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .equipment-item p {
+        font-size: 11px;
+        line-height: 1.5;
+        font-weight: 700;
+        word-break: keep-all;
+      }
+
+      /* 안내 팁 */
+      .equipment-tip {
+        margin-top: 22px;
+        background: #e7e2d0;
+        border-radius: 14px;
+        padding: 14px 17px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #52634e;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .equipment-tip strong {
+        color: #263b38;
+        white-space: nowrap;
+        font-size: 14px;
+      }
+
+      /* 하단 포지션 선택 버튼 */
+      .position-navigation {
+        width: 100%;
+        max-width: 1280px;
+        margin: 38px auto 0;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 10px;
+      }
+
+      .position-tab {
+        border: 2px solid transparent;
+        border-radius: 18px;
+        background: #f3f0e7;
+        color: #263b38;
+        min-height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        transition: 0.25s ease;
+      }
+
+      .position-tab strong {
+        font-family: "Montserrat", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .position-tab span {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .position-tab:hover,
+      .position-tab.active {
+        background: #294b39;
+        color: #fff;
+        border-color: #b6d28f;
+        box-shadow: 0 0 18px rgba(190, 220, 151, 0.3);
+        transform: translateY(-3px);
+      }
+
+      /* 태블릿 */
+      @media (max-width: 1000px) {
+        .equipment-layout {
+          grid-template-columns: 1fr;
+          max-width: 750px;
+          gap: 15px;
+        }
+
+        .baseball-field {
+          max-height: 520px;
+        }
+
+        .position-navigation {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+
+      /* 모바일 */
+      @media (max-width: 600px) {
+        .equipment-page {
+          padding: 38px 16px;
+          background-attachment: scroll;
+        }
+
+        .equipment-header {
+          margin-bottom: 25px;
+        }
+
+        .equipment-header h1 {
+          font-size: 34px;
+        }
+
+        .equipment-header > p:last-child {
+          font-size: 12px;
+          line-height: 1.7;
+        }
+
+        .equipment-layout {
+          gap: 5px;
+        }
+
+        .field-area {
+          padding: 18px 0 5px;
+        }
+
+        .position-marker {
+          width: 43px;
+          height: 43px;
+        }
+
+        .position-marker strong {
+          font-size: 13px;
+        }
+
+        .position-marker span {
+          font-size: 8px;
+        }
+
+        .equipment-card {
+          border-radius: 18px;
+        }
+
+        .equipment-card-top {
+          min-height: 190px;
+          padding: 25px;
+        }
+
+        .equipment-card-top h2 {
+          font-size: 34px;
+        }
+
+        .equipment-card-top .position-description {
+          font-size: 12px;
+        }
+
+        .equipment-card-body {
+          padding: 20px 15px;
+        }
+
+        .equipment-list {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 13px 9px;
+        }
+
+        .equipment-item-visual {
+          aspect-ratio: 1 / 1;
+        }
+
+        .equipment-item p {
+          font-size: 11px;
+        }
+
+        .position-navigation {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+          margin-top: 23px;
+        }
+
+        .position-tab {
+          min-height: 58px;
+          border-radius: 12px;
+        }
+
+        .position-tab strong {
+          font-size: 15px;
+        }
+
+        .position-tab span {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <input type="checkbox" id="menu-toggle" />
+    <input type="checkbox" id="search-toggle" />
+
+    <header class="header">
+      <div class="header-top">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">ACE</span>
+          <span class="logo-text">
+            <strong>A.C.E</strong>
+            <small>BASEBALL CLUB</small>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <label for="search-toggle" class="search-button">⌕ 검색</label>
+          <a href="contact.html" class="header-join">참여하기 ↗</a>
+
+          <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-inner">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="training.html">훈련방법</a>
+          <a href="equipment.html" aria-current="page">사용장비</a>
+          <a href="gallery.html">활동 갤러리</a>
+          <a href="contact.html">문의하기</a>
+        </div>
+      </nav>
+
+      <div class="search-panel">
+        <div class="search-panel-inner">
+          <p class="eyebrow">FIND WHAT YOU NEED</p>
+          <h2>무엇을 찾고 있나요?</h2>
+          <form action="about.html" method="get">
+            <input
+              type="search"
+              placeholder="팀 소개, 활동 안내, 모집 정보..."
+            />
+            <button type="submit">검색하기 ↗</button>
+          </form>
+          <label for="search-toggle" class="search-close">닫기 ✕</label>
+        </div>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="about.html">팀 소개 <span>01</span></a>
+        <a href="activities.html">팀 활동 <span>02</span></a>
+        <a href="training.html">훈련방법 <span>03</span></a>
+        <a href="equipment.html" aria-current="page">사용장비 <span>04</span></a>
+        <a href="gallery.html">활동 갤러리 <span>05</span></a>
+        <a href="contact.html">문의하기 <span>06</span></a>
+      </div>
+    </header>
+
+    <main class="equipment-page">
+      <!-- 상단 제목 -->
+      <header class="equipment-header">
+        <p class="equipment-brand">A.C.E · BASEBALL CLUB</p>
+
+        <h1>포지션별 <span>사용 장비</span></h1>
+
+        <p>
+          야구장 위 포지션을 클릭하여, 각 포지션에 필요한 장비를 확인해 보세요.
+        </p>
+      </header>
+
+      <!-- 야구장 + 장비 정보 -->
+      <section class="equipment-layout">
+        <!-- 왼쪽 야구장 -->
+        <div class="field-area">
+          <p class="field-label">BASEBALL FIELD</p>
+
+          <div class="baseball-field">
+            <!-- 야구장 다이아몬드 SVG -->
+            <svg viewBox="0 0 600 550" preserveAspectRatio="xMidYMid meet">
+              <!-- 외야 잔디 -->
+              <path
+                d="M300 520 L18 250 Q300 -150 582 250 Z"
+                fill="#477a4d"
+                fill-opacity=".72"
+                stroke="#d6dfc9"
+                stroke-width="3"
+              />
+
+              <!-- 외야 워닝트랙 -->
+              <path
+                d="M22 248 Q300 -135 578 248"
+                fill="none"
+                stroke="#d4bb91"
+                stroke-width="10"
+                stroke-opacity=".62"
+              />
+
+              <!-- 내야 흙 -->
+              <path
+                d="M300 485 L125 340 L300 195 L475 340 Z"
+                fill="#a77d55"
+                fill-opacity=".86"
+                stroke="#e9d7b7"
+                stroke-width="3"
+              />
+
+              <!-- 내야 잔디 -->
+              <path
+                d="M300 455 L160 340 L300 225 L440 340 Z"
+                fill="#52804b"
+                fill-opacity=".78"
+              />
+
+              <!-- 베이스라인 -->
+              <path
+                d="M300 485 L125 340 L300 195 L475 340 Z"
+                fill="none"
+                stroke="#f4e9d4"
+                stroke-width="3"
+              />
+
+              <!-- 홈플레이트 -->
+              <path
+                d="M300 498 L282 482 L282 465 L318 465 L318 482 Z"
+                fill="#fff4df"
+                stroke="#d9c9aa"
+                stroke-width="2"
+              />
+
+              <!-- 1루 -->
+              <rect
+                x="466"
+                y="331"
+                width="19"
+                height="19"
+                transform="rotate(45 475.5 340.5)"
+                fill="#fff3dc"
+              />
+
+              <!-- 2루 -->
+              <rect
+                x="291"
+                y="186"
+                width="19"
+                height="19"
+                transform="rotate(45 300.5 195.5)"
+                fill="#fff3dc"
+              />
+
+              <!-- 3루 -->
+              <rect
+                x="116"
+                y="331"
+                width="19"
+                height="19"
+                transform="rotate(45 125.5 340.5)"
+                fill="#fff3dc"
+              />
+
+              <!-- 투수 마운드 -->
+              <circle
+                cx="300"
+                cy="335"
+                r="16"
+                fill="#b88c61"
+                stroke="#ead8b9"
+                stroke-width="2"
+              />
+
+              <!-- 홈에서 투수까지 -->
+              <path
+                d="M300 465 L300 351"
+                stroke="#e9d7b7"
+                stroke-width="2"
+                stroke-dasharray="5 7"
+              />
+            </svg>
+
+            <!-- 포지션 클릭 버튼 -->
+            <button
+              type="button"
+              class="position-marker pos-lf"
+              data-position="LF"
+              aria-pressed="false"
+            >
+              <strong>LF</strong><span>좌익수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-cf"
+              data-position="CF"
+              aria-pressed="false"
+            >
+              <strong>CF</strong><span>중견수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-rf"
+              data-position="RF"
+              aria-pressed="false"
+            >
+              <strong>RF</strong><span>우익수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-ss"
+              data-position="SS"
+              aria-pressed="false"
+            >
+              <strong>SS</strong><span>유격수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-2b"
+              data-position="2B"
+              aria-pressed="false"
+            >
+              <strong>2B</strong><span>2루수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-3b"
+              data-position="3B"
+              aria-pressed="false"
+            >
+              <strong>3B</strong><span>3루수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-1b"
+              data-position="1B"
+              aria-pressed="false"
+            >
+              <strong>1B</strong><span>1루수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-p"
+              data-position="P"
+              aria-pressed="false"
+            >
+              <strong>P</strong><span>투수</span>
+            </button>
+
+            <button
+              type="button"
+              class="position-marker pos-c active"
+              data-position="C"
+              aria-pressed="true"
+            >
+              <strong>C</strong><span>포수</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 오른쪽 장비 안내 카드 -->
+        <div class="equipment-card">
+          <div class="equipment-card-top">
+            <h2 id="position-name" aria-live="polite">포수</h2>
+
+            <p class="english-name" id="position-english">CATCHER</p>
+
+            <p class="position-description" id="position-description">
+              팀의 중심이자, 투수와 가장 가까운 포지션! 안전과 전달을 책임지는
+              중요한 역할입니다.
+            </p>
+          </div>
+
+          <div class="equipment-card-body">
+            <h3 class="equipment-list-title">필요한 장비</h3>
+
+            <div class="equipment-list" id="equipment-list">
+              <!-- JavaScript에서 장비 목록 표시 -->
+            </div>
+
+            <div class="equipment-tip">
+              <strong>💡 TIP!</strong>
+              <p id="position-tip">
+                포수는 다른 포지션보다 보호 장비의 비중이 큰 포지션이에요.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 하단 포지션 선택 메뉴 -->
+      <nav class="position-navigation" aria-label="수비 포지션 선택">
+        <button
+          type="button"
+          class="position-tab"
+          data-position="P"
+          aria-pressed="false"
+        >
+          <strong>P</strong><span>투수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab active"
+          data-position="C"
+          aria-pressed="true"
+        >
+          <strong>C</strong><span>포수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="1B"
+          aria-pressed="false"
+        >
+          <strong>1B</strong><span>1루수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="2B"
+          aria-pressed="false"
+        >
+          <strong>2B</strong><span>2루수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="3B"
+          aria-pressed="false"
+        >
+          <strong>3B</strong><span>3루수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="SS"
+          aria-pressed="false"
+        >
+          <strong>SS</strong><span>유격수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="LF"
+          aria-pressed="false"
+        >
+          <strong>LF</strong><span>좌익수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="CF"
+          aria-pressed="false"
+        >
+          <strong>CF</strong><span>중견수</span>
+        </button>
+
+        <button
+          type="button"
+          class="position-tab"
+          data-position="RF"
+          aria-pressed="false"
+        >
+          <strong>RF</strong><span>우익수</span>
+        </button>
+      </nav>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-mark">ACE</span>
+            <span class="logo-text">
+              <strong>A.C.E</strong>
+              <small>BASEBALL CLUB</small>
+            </span>
+          </a>
+          <p>보는 야구에서, 함께 뛰는 야구로.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="about.html">팀 소개</a>
+          <a href="activities.html">팀 활동</a>
+          <a href="training.html">훈련방법</a>
+          <a href="equipment.html">사용장비</a>
+          <a href="contact.html">문의하기</a>
+        </div>
+
+        <div class="footer-contact">
+          <p class="eyebrow">CONTACT</p>
+          <h3>문의 및 연락</h3>
+          <a href="mailto:mysun4545@naver.com">✉　mysun4545@naver.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© A.C.E. ALL RIGHTS RESERVED.</span>
+        <span>DAEGU · GYEONGBUK</span>
+      </div>
+    </footer>
+
+    <a href="#top" class="top-button" aria-label="페이지 최상단으로 이동">
+      <span>↑</span>
+      <small>TOP</small>
+    </a>
+
+    <script>
+      // 포지션별 장비 정보
+      const equipmentData = {
+        P: {
+          name: "투수",
+          english: "PITCHER",
+          description: "경기의 흐름을 이끌고 타자와 승부하는 포지션입니다.",
+          tip: "투수는 투구 동작에 편안한 글러브와 기본 보호 장비가 중요해요.",
+          gear: [
+            ["🧤", "투수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+            ["🛡️", "보호용 장비"],
+          ],
+        },
+
+        C: {
+          name: "포수",
+          english: "CATCHER",
+          description:
+            "팀의 중심이자, 투수와 가장 가까운 포지션! 안전과 전달을 책임지는 중요한 역할입니다.",
+          tip: "포수는 다른 포지션보다 보호 장비의 비중이 큰 포지션이에요.",
+          gear: [
+            ["🧤", "포수 미트"],
+            ["🥽", "포수 마스크"],
+            ["🛡️", "프로텍터"],
+            ["🦵", "레그가드"],
+            ["⛑️", "포수 헬멧"],
+          ],
+        },
+
+        "1B": {
+          name: "1루수",
+          english: "FIRST BASE",
+          description:
+            "내야에서 송구를 받아내고 아웃카운트를 만드는 중요한 포지션입니다.",
+          tip: "1루수는 송구를 안정적으로 잡기 위한 전용 미트를 사용해요.",
+          gear: [
+            ["🧤", "1루수 미트"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        "2B": {
+          name: "2루수",
+          english: "SECOND BASE",
+          description:
+            "빠른 움직임과 정확한 송구로 내야 수비를 연결하는 포지션입니다.",
+          tip: "빠른 포구와 송구를 위해 가볍고 움직임이 편한 글러브가 좋아요.",
+          gear: [
+            ["🧤", "내야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        "3B": {
+          name: "3루수",
+          english: "THIRD BASE",
+          description: "타자의 강한 타구에 빠르게 대응해야 하는 포지션입니다.",
+          tip: "강한 타구를 안정적으로 잡을 수 있는 내야수용 글러브가 필요해요.",
+          gear: [
+            ["🧤", "내야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        SS: {
+          name: "유격수",
+          english: "SHORTSTOP",
+          description:
+            "내야 중앙에서 넓은 수비 범위를 담당하고 팀의 수비를 이끕니다.",
+          tip: "넓은 수비 범위와 빠른 송구에 적합한 내야수용 글러브가 기본이에요.",
+          gear: [
+            ["🧤", "내야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        LF: {
+          name: "좌익수",
+          english: "LEFT FIELD",
+          description:
+            "외야 왼쪽에서 타구를 처리하고 팀의 외야 수비를 담당합니다.",
+          tip: "높이 뜬 타구를 잡기 편한 외야수용 글러브를 사용해요.",
+          gear: [
+            ["🧤", "외야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        CF: {
+          name: "중견수",
+          english: "CENTER FIELD",
+          description: "외야 중앙에서 넓은 수비 범위를 책임지는 포지션입니다.",
+          tip: "넓은 수비 범위를 커버할 수 있는 외야수용 글러브가 기본이에요.",
+          gear: [
+            ["🧤", "외야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+
+        RF: {
+          name: "우익수",
+          english: "RIGHT FIELD",
+          description:
+            "외야 오른쪽에서 타구를 처리하고 정확한 송구를 담당합니다.",
+          tip: "외야 수비와 긴 송구에 적합한 글러브를 사용해요.",
+          gear: [
+            ["🧤", "외야수용 글러브"],
+            ["👟", "야구화"],
+            ["🧢", "야구 모자"],
+            ["👕", "유니폼"],
+          ],
+        },
+      };
+
+      // 포지션 선택 기능
+      function selectPosition(position) {
+        const data = equipmentData[position];
+
+        if (!data) return;
+
+        // 포지션 이름 변경
+        document.getElementById("position-name").textContent = data.name;
+
+        // 영어 이름 변경
+        document.getElementById("position-english").textContent = data.english;
+
+        // 설명 변경
+        document.getElementById("position-description").textContent =
+          data.description;
+
+        // TIP 변경
+        document.getElementById("position-tip").textContent = data.tip;
+
+        // 장비 목록 변경
+        const equipmentList = document.getElementById("equipment-list");
+
+        equipmentList.innerHTML = "";
+
+        data.gear.forEach((item) => {
+          const equipmentItem = document.createElement("div");
+
+          equipmentItem.className = "equipment-item";
+
+          equipmentItem.innerHTML = `
+          <div class="equipment-item-visual">${item[0]}</div>
+          <p>${item[1]}</p>
+        `;
+
+          equipmentList.appendChild(equipmentItem);
+        });
+
+        // 야구장 포지션 버튼 활성화
+        document.querySelectorAll(".position-marker").forEach((button) => {
+          button.classList.toggle(
+            "active",
+            button.dataset.position === position,
+          );
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.position === position),
+          );
+        });
+
+        // 하단 포지션 버튼 활성화
+        document.querySelectorAll(".position-tab").forEach((button) => {
+          button.classList.toggle(
+            "active",
+            button.dataset.position === position,
+          );
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.position === position),
+          );
+        });
+      }
+
+      // 야구장과 하단 메뉴 모두 클릭 가능하게 설정
+      document.querySelectorAll("[data-position]").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectPosition(button.dataset.position);
+        });
+      });
+
+      // 처음 화면은 포수로 표시
+      selectPosition("C");
+    </script>
+  </body>
+</html>
