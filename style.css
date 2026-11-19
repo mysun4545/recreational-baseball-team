@@ -374,6 +374,18 @@ input {
   transform: scale(1.02);
 }
 
+.hero-bg-first {
+  background-image: url("https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=2000&q=90");
+}
+
+.hero-bg-second {
+  background-image: url("https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=2000&q=90");
+}
+
+.hero-bg-third {
+  background-image: url("https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=2000&q=90");
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -2843,4 +2855,76 @@ input {
 .mates-transition-content {
   position: relative;
   z-index: 2;
+}
+/* 문의 완료 팝업 */
+.bm-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.bm-popup {
+  width: 100%;
+  max-width: 430px;
+  padding: 42px 30px 32px;
+  border-radius: 18px;
+  background: #f5f4ef;
+  color: #263b38;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: bmPopupShow 0.3s ease;
+}
+
+.bm-popup-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  border: 4px solid #78927f;
+  border-radius: 50%;
+  color: #78927f;
+  font-size: 48px;
+  line-height: 68px;
+  font-weight: 600;
+}
+
+.bm-popup h2 {
+  margin: 0 0 14px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.bm-popup p {
+  margin: 0 0 28px;
+  color: #78817a;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.bm-popup button {
+  width: 145px;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  background: #263b38;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes bmPopupShow {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

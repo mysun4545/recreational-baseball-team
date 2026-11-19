@@ -98,8 +98,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div
-              class="hero-bg"
-              style="background-image: url('https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?auto=format&fit=crop&w=2000&q=90')"
+              class="hero-bg hero-bg-first"
               aria-hidden="true"
             ></div>
             <div class="hero-overlay"></div>
@@ -121,8 +120,7 @@
 
           <div class="swiper-slide">
             <div
-              class="hero-bg"
-              style="background-image: url('https://images.unsplash.com/photo-1771870163686-734d43559a30?auto=format&fit=crop&w=2000&q=90')"
+              class="hero-bg hero-bg-second"
               aria-hidden="true"
             ></div>
             <div class="hero-overlay"></div>
@@ -144,8 +142,7 @@
 
           <div class="swiper-slide">
             <div
-              class="hero-bg"
-              style="background-image: url('https://images.unsplash.com/photo-1631502539448-04272d19dadf?auto=format&fit=crop&w=2000&q=90')"
+              class="hero-bg hero-bg-third"
               aria-hidden="true"
             ></div>
             <div class="hero-overlay"></div>
@@ -291,34 +288,6 @@
     </a>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      new Swiper(".hero-swiper", {
-        loop: true,
-        effect: "fade",
-        fadeEffect: { crossFade: true },
-        navigation: {
-          nextEl: ".hero-swiper .swiper-button-next",
-          prevEl: ".hero-swiper .swiper-button-prev",
-        },
-        pagination: {
-          el: ".hero-swiper .swiper-pagination",
-          clickable: true,
-        },
-        autoplay: prefersReducedMotion
-          ? false
-          : { delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false },
-      });
-
-      AOS.init({
-        duration: 800,
-        offset: 80,
-        once: true,
-        disable: prefersReducedMotion,
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

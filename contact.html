@@ -351,6 +351,7 @@
     </a>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       const contactForm = document.querySelector("#contact-form");
       const contactSubmit = contactForm.querySelector('button[type="submit"]');
@@ -380,25 +381,48 @@
             message: formData.get("message").trim(),
           };
 
-          await emailjs.send(
-            "service_ubs20c7",
-            "template_84x6vsu",
-            templateParams,
-            { publicKey: "5GfLruUNCPAGunP6a" },
-          );
+          try {
+            await emailjs.send(
+              "service_ubs20c7",
+              "template_84x6vsu",
+              templateParams,
+              { publicKey: "5GfLruUNCPAGunP6a" },
+            );
+          } catch (error) {
+            console.error("EmailJS 문의 전송 실패:", error);
+            contactFormStatus.dataset.state = "error";
+            const errorDetails =
+              error &&
+              typeof error === "object" &&
+              typeof error.text === "string"
+                ? error.text
+                : error instanceof Error
+                  ? error.message
+                  : String(error);
+            contactFormStatus.textContent = `전송에 실패했습니다: ${errorDetails}`;
+
+            await Swal.fire({
+              icon: "error",
+              title: "문의 전송에 실패했습니다.",
+              text: errorDetails,
+              confirmButtonText: "확인",
+              confirmButtonColor: "#263b38",
+            });
+            return;
+          }
+
           contactFormStatus.dataset.state = "success";
           contactFormStatus.textContent = "문의가 성공적으로 전송되었습니다.";
+
+          await Swal.fire({
+            icon: "success",
+            title: "문의가 전송되었습니다!",
+            text: "소중한 문의를 보내주셔서 감사합니다. 확인 후 답변드리겠습니다.",
+            confirmButtonText: "확인",
+            confirmButtonColor: "#263b38",
+          });
+
           contactForm.reset();
-        } catch (error) {
-          console.error("EmailJS 문의 전송 실패:", error);
-          contactFormStatus.dataset.state = "error";
-          const errorDetails =
-            error && typeof error === "object" && typeof error.text === "string"
-              ? error.text
-              : error instanceof Error
-                ? error.message
-                : String(error);
-          contactFormStatus.textContent = `전송에 실패했습니다: ${errorDetails}`;
         } finally {
           contactSubmit.disabled = false;
           contactSubmit.innerHTML = submitButtonContent;
